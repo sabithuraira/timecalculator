@@ -1,3 +1,11 @@
 /*
 Please put the custom styles here.
 */
+
+body, div, h1 {margin: 0px; padding: 0px;}
+html, body {width: 100%; height: 100%; overflow-x: hidden;}
+
+
+th, td{
+	text-align: center;
+}

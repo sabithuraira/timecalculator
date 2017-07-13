@@ -5,21 +5,124 @@
 	<meta name="viewport" content="width=device-width,user-scalable=no"/>
 	<link rel="stylesheet"  href="./lib/tau/mobile/theme/default/tau.css">
 	<link rel="stylesheet" type="text/css" href="./css/style.css"/>
-	<title>Tizen Web IDE - Template - Tizen - Tizen Web UI Framework - Single-Page</title>
+	<title>Farifam - Time Calculator</title>
 </head>
 
 <body>
-	<div class="ui-page" id="main">
+	<div class="ui-page ui-page-active" id="main">
 		<div class="ui-header">
-			<h1>Single-page application </h1>
-		</div><!-- /header -->
+	       	<h1>Time Calculator</h1>
+	   	</div>
+	   	<hr/>
+	   	
+	   	<div class="ui-content">
+	      	<form id="form-calculator">
+	      		<table>
+	      			<tr>
+	      				<td>Day</td>
+	      				<td>Hour</td>
+	      				<td>Minute</td>
+	      				<td>Second</td>
+	      			</tr>
+	      			<tr>
+	      				<td>
+			   				<input type="number" id="from_day" min="0" max="31" required />
+	      				</td>
+	      				<td>
+			   				<input type="number" id="from_hour" min="0" max="24" required />
+	      				</td>
+	      				<td>
+			   				<input type="number" id="from_minute" min="0" max="60" required />
+	      				</td>
+	      				<td>
+			   				<input type="number" id="from_second" min="0" max="60" required />
+	      				</td>
+	      			</tr>
+	      			
+	      			<tr>
+	      				<td colspan="4">
+							<!-- <li class="ui-li-static li-has-right-circle-btn">Add<button data-inline="true" data-icon="add" data-style="circle"></button></li> -->
+	      					<input type="radio" id="ops" value="plus" checked> <label data-inline="true" data-icon="add" data-style="circle"></label>
+	  						<input type="radio" id="ops" value="min"> -
+	      				</td>
+	      			</tr>
+	      			
+	      			<tr>
+	      				<td>
+			   				<input type="number" id="to_day" min="0" max="31"  required />
+	      				</td>
+	      				<td>
+			   				<input type="number" id="to_hour" min="0" max="24" required />
+	      				</td>
+	      				<td>
+			   				<input type="number" id="to_minute" min="0" max="60" required />
+	      				</td>
+	      				<td>
+			   				<input type="number" id="to_second" min="0" max="60" required />
+	      				</td>
+	      			</tr>
+	      			
+	      			<tr>
+	      				<td colspan="4">
+			   				<button id="btn-submit" type="submit">Calculate</button>
+	      				</td>
+	      			</tr>
+	      			
+	      			
+	      			<tr>
+	      				<td colspan="4">
+			   				<h2>Result</h2>
+	      				</td>
+	      			</tr>
+	      			
+	      			<tr>
+	      				<td>
+			   				<label id="result_day">00</label>
+	      				</td>
+	      				<td>
+			   				<label id="result_hour">00</label>
+	      				</td>
+	      				<td>
+			   				<label id="result_minute">00</label>
+	      				</td>
+	      				<td>
+			   				<label id="result_second">00</label>
+	      				</td>
+	      			</tr>
+	      		</table>
+	      		<!-- <div class="tile left">
+		            <div class="box">
+			   			<input type="number" name="from_day" placeholder="Day"/>
+		            </div>
+		         </div>
+		         <div class="tile right">
+		            <div class="box">
+			   			<input type="number" name="from_hour" placeholder="Hour"/>
+		            </div>
+		         </div>
+		         <div class="tile left">
+		            <div class="box">
+			   			<input type="number" name="from_minute" placeholder="Minute"/>
+		            </div>
+		         </div>
+		         <div class="tile right">
+		            <div class="box">
+			   			<input type="number" name="from_second" placeholder="Second"/>
+		            </div>
+		         </div> -->
+			
+			</form>
+		</div>		
 
-		<div class="ui-content">
-			<p>Hai, This is a single page boilerplate template that you can copy to build your first Tizen Web UI Framework page.</p>
-		</div><!-- /content -->
-	</div><!-- /page -->
+   
+	   	<div class="ui-footer">
+	   		<h2>Farifam</h2>
+	   	</div>
+	</div>
+	
 
 	<script type="text/javascript" src="./lib/tau/mobile/js/tau.js"></script>
+	<script type="text/javascript" src="./lib/jquery.js"></script>
 	<script src="./js/main.js"></script>
 </body>
 </html>
