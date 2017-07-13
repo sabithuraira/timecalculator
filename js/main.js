@@ -29,7 +29,7 @@ $('#form-calculator').on('submit',function () {
 	var from_minute=$("#from_minute").val();
 	var from_second=$("#from_second").val();
 	
-	var ops=$("#ops").val();
+	var ops=$("#ops:checked").val();
 	
 	var to_day=$("#to_day").val();
 	var to_hour=$("#to_hour").val();
@@ -47,29 +47,36 @@ $('#form-calculator').on('submit',function () {
 	
 	var total=0;
 	var result="";
-
 	
 	if(ops=="plus"){
-		total=toSeconds(from_time);
-		total+=toSeconds(to_time);
+		total = toSeconds(from_time) + toSeconds(to_time);
 	}
-	else if(ops="min"){
-		total=toSeconds(from_time);
-		total-=toSeconds(to_time);
+	else if(ops=="min"){
+		if(toSeconds(from_time) > toSeconds(to_time)){
+			total = toSeconds(from_time) - toSeconds(to_time);
+		}
+		else{
+			total = toSeconds(to_time) - toSeconds(from_time);
+		}
 	}
 
-	
 	result = toHHMMSS(total);
 
     var parts = result.split(':');
-
-	console.log(parts[0]);
-    result_day.html(parts[0]);
-    result_hour.html(parts[1]);
-    result_minute.html(parts[2]);
-    result_second.html(parts[3]);
     
-
+    if(ops=="min"){
+        result_day.html((parts[0]!=0) ? "-"+parts[0] : parts[0]);
+        result_hour.html((parts[1]!=0) ? "-"+parts[1] : parts[1]);
+        result_minute.html((parts[2]!=0) ? "-"+parts[2] : parts[2]);
+        result_second.html((parts[3]!=0) ? "-"+parts[3] : parts[3]);
+    }
+    else{
+        result_day.html(parts[0]);
+        result_hour.html(parts[1]);
+        result_minute.html(parts[2]);
+        result_second.html(parts[3]);	
+    }
+    
 	return false;
 });
 
@@ -82,17 +89,17 @@ function toSeconds( time ) {
 function toHHMMSS(sec) {
     var sec_num = parseInt(sec, 10); // don't forget the second parm
     var days   	= Math.floor(sec_num / 86400);
-    var hours   = Math.floor(sec_num - (days * 86400) / 3600);
+    var hours   = Math.floor((sec_num - (days * 86400)) / 3600);
     var minutes = Math.floor((sec_num - (days * 86400) - (hours * 3600)) / 60);
     var seconds = sec_num - (days * 86400) - (hours * 3600) - (minutes * 60);
 //    var hours   = Math.floor(sec_num / 3600);
 //    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
 //    var seconds = sec_num - (hours * 3600) - (minutes * 60);
 
-    if (days   < 10) {days   = "0"+days;}
-    if (hours   < 10) {hours   = "0"+hours;}
-    if (minutes < 10) {minutes = "0"+minutes;}
-    if (seconds < 10) {seconds = "0"+seconds;}
+    if (days   < 10 && days >= 0) {days   = "0"+days;}
+    if (hours   < 10 && hours >= 0) {hours   = "0"+hours;}
+    if (minutes < 10 && minutes >= 0) {minutes = "0"+minutes;}
+    if (seconds < 10 && seconds >= 0) {seconds = "0"+seconds;}
     var time    = days+':'+hours+':'+minutes+':'+seconds;
     return time;
 }
