@@ -9,7 +9,7 @@
 </head>
 
 <body>
-	<div class="ui-page ui-page-active" id="main">
+	<!-- <div class="ui-page ui-page-active" id="main">
 		<div class="ui-header">
 	       	<h1>Time Calculator</h1>
 	   	</div>
@@ -26,39 +26,39 @@
 	      			</tr>
 	      			<tr>
 	      				<td>
-			   				<input type="number" id="from_day" min="0" max="31" required />
+			   				<input type="number" id="from_day" min="0" required />
 	      				</td>
 	      				<td>
-			   				<input type="number" id="from_hour" min="0" max="24" required />
+			   				<input type="number" id="from_hour" min="0" required />
 	      				</td>
 	      				<td>
-			   				<input type="number" id="from_minute" min="0" max="60" required />
+			   				<input type="number" id="from_minute" min="0" required />
 	      				</td>
 	      				<td>
-			   				<input type="number" id="from_second" min="0" max="60" required />
+			   				<input type="number" id="from_second" min="0" required />
 	      				</td>
 	      			</tr>
 	      			
 	      			<tr>
 	      				<td colspan="4">
-							<!-- <li class="ui-li-static li-has-right-circle-btn">Add<button data-inline="true" data-icon="add" data-style="circle"></button></li> -->
-	      					<input type="radio" id="ops" name="operation" value="plus" checked> +
-	  						<input type="radio" id="ops" name="operation" value="min"> -
+							<li class="ui-li-static li-has-right-circle-btn">Add<button data-inline="true" data-icon="add" data-style="circle"></button></li>
+	      					<input type="radio" id="ops" name="operation" value="plus" checked> <b>+</b>
+	  						<input type="radio" id="ops" name="operation" value="min"> <b>-</b>
 	      				</td>
 	      			</tr>
 	      			
 	      			<tr>
 	      				<td>
-			   				<input type="number" id="to_day" min="0" max="31"  required />
+			   				<input type="number" id="to_day" min="0"  required />
 	      				</td>
 	      				<td>
-			   				<input type="number" id="to_hour" min="0" max="24" required />
+			   				<input type="number" id="to_hour" min="0" required />
 	      				</td>
 	      				<td>
-			   				<input type="number" id="to_minute" min="0" max="60" required />
+			   				<input type="number" id="to_minute" min="0" required />
 	      				</td>
 	      				<td>
-			   				<input type="number" id="to_second" min="0" max="60" required />
+			   				<input type="number" id="to_second" min="0" required />
 	      				</td>
 	      			</tr>
 	      			
@@ -76,6 +76,13 @@
 	      			</tr>
 	      			
 	      			<tr>
+	      				<td>Day</td>
+	      				<td>Hour</td>
+	      				<td>Minute</td>
+	      				<td>Second</td>
+	      			</tr>
+	      			
+	      			<tr>
 	      				<td>
 			   				<label id="result_day">00</label>
 	      				</td>
@@ -90,36 +97,159 @@
 	      				</td>
 	      			</tr>
 	      		</table>
-	      		<!-- <div class="tile left">
-		            <div class="box">
-			   			<input type="number" name="from_day" placeholder="Day"/>
-		            </div>
-		         </div>
-		         <div class="tile right">
-		            <div class="box">
-			   			<input type="number" name="from_hour" placeholder="Hour"/>
-		            </div>
-		         </div>
-		         <div class="tile left">
-		            <div class="box">
-			   			<input type="number" name="from_minute" placeholder="Minute"/>
-		            </div>
-		         </div>
-		         <div class="tile right">
-		            <div class="box">
-			   			<input type="number" name="from_second" placeholder="Second"/>
-		            </div>
-		         </div> -->
 			
 			</form>
 		</div>		
 
-   
-	   	<div class="ui-footer">
-	   		<h2>Farifam</h2>
-	   	</div>
-	</div>
+  
+	</div> -->
 	
+	<div class="ui-page" id="tabs_text_with_title">
+		<div class="ui-tabs">
+			<h1 class="ui-title">Time Calculator</h1>
+			<div class="ui-tabbar">
+				<ul>
+					<li class="ui-li-anchor"><a href="#" class="ui-tab-active">Time</a></li>
+					<li class="ui-li-anchor"><a href="#">Age</a></li>
+					<li class="ui-li-anchor"><a href="#">Tab3</a></li>
+					<li class="ui-li-anchor"><a href="#">Tab4</a></li>
+				</ul>
+			</div>
+			<br/>
+			<div class="ui-section-changer" id="sectionChanger">
+				<div>
+					<section class="ui-section-active">
+						<form id="form-calculator">
+				      		<table>
+				      			<tr>
+				      				<td>Day</td>
+				      				<td>Hour</td>
+				      				<td>Minute</td>
+				      				<td>Second</td>
+				      			</tr>
+				      			<tr>
+				      				<td>
+						   				<input type="number" id="from_day" min="0" required />
+				      				</td>
+				      				<td>
+						   				<input type="number" id="from_hour" min="0" required />
+				      				</td>
+				      				<td>
+						   				<input type="number" id="from_minute" min="0" required />
+				      				</td>
+				      				<td>
+						   				<input type="number" id="from_second" min="0" required />
+				      				</td>
+				      			</tr>
+				      			
+				      			<tr>
+				      				<td colspan="4">
+										<input type="radio" id="ops" name="operation" value="plus" checked /> <b>+</b>
+				  						<input type="radio" id="ops" name="operation" value="min" /> <b>-</b>
+				      				</td>
+				      			</tr>
+				      			
+				      			<tr>
+				      				<td>
+						   				<input type="number" id="to_day" min="0"  required />
+				      				</td>
+				      				<td>
+						   				<input type="number" id="to_hour" min="0" required />
+				      				</td>
+				      				<td>
+						   				<input type="number" id="to_minute" min="0" required />
+				      				</td>
+				      				<td>
+						   				<input type="number" id="to_second" min="0" required />
+				      				</td>
+				      			</tr>
+				      			
+				      			<tr>
+				      				<td colspan="4">
+						   				<button id="btn-submit" type="submit">Calculate</button>
+				      				</td>
+				      			</tr>
+				      			
+				      			
+				      			<tr>
+				      				<td colspan="4">
+						   				<h2>Result</h2>
+				      				</td>
+				      			</tr>
+				      			
+				      			<tr>
+				      				<td>Day</td>
+				      				<td>Hour</td>
+				      				<td>Minute</td>
+				      				<td>Second</td>
+				      			</tr>
+				      			
+				      			<tr>
+				      				<td>
+						   				<label id="result_day">00</label>
+				      				</td>
+				      				<td>
+						   				<label id="result_hour">00</label>
+				      				</td>
+				      				<td>
+						   				<label id="result_minute">00</label>
+				      				</td>
+				      				<td>
+						   				<label id="result_second">00</label>
+				      				</td>
+				      			</tr>
+				      		</table>
+						
+						</form>
+					</section>
+					<section>
+					
+						 <form id="age-calculator">
+						 	<table>
+								<tr>
+									<td>Date of birth</td>
+									<td>Age at the date of</td>
+								</tr>	
+								
+								<tr>
+									<td><input type="date" id="from_age" required /></td>
+									<td><input type="date" id="to_age" required /></td>
+								</tr>
+								
+								<tr>
+									<td colspan="2"><br/><button type="submit">Calculate</button></td>
+								</tr>
+								
+								<tr>
+				      				<td colspan="2"><br/>Your age is</td>
+								</tr>	
+								
+								<tr>
+				      				<td colspan="2"><label id="result_age">00</label></td>
+								</tr>					 	
+						 	</table>
+						 		
+						</form>
+					</section>
+					<section>
+						<ul class="ui-listview">
+							<li class="ui-li-anchor"><a href="#">List 1</a></li>
+							<li class="ui-li-anchor"><a href="#">List 2</a></li>
+							<li class="ui-li-anchor"><a href="#">List 3</a></li>
+						</ul>
+					</section>
+					<section>
+						<ul class="ui-listview">
+							<li class="ui-li-anchor"><a href="#">List 1</a></li>
+							<li class="ui-li-anchor"><a href="#">List 2</a></li>
+							<li class="ui-li-anchor"><a href="#">List 3</a></li>
+							<li class="ui-li-anchor"><a href="#">List 4</a></li>
+						</ul>
+					</section>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<script type="text/javascript" src="./lib/tau/mobile/js/tau.js"></script>
 	<script type="text/javascript" src="./lib/jquery.js"></script>

@@ -3,9 +3,23 @@ Please put the custom styles here.
 */
 
 body, div, h1 {margin: 0px; padding: 0px;}
-html, body {width: 100%; height: 100%; overflow-x: hidden;}
+html, body, table {width: 100%; height: 100%; overflow-x: hidden;}
 
 
 th, td{
 	text-align: center;
+}
+
+td.left-align{
+	text-align: left;
+}
+
+td.distance{
+  padding-right: 30px;
+}
+
+input[type="radio"] {
+  margin-top: -1px;
+  margin-left: 30px;
+  vertical-align: middle;
 }
