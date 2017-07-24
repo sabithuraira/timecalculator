@@ -8,11 +8,14 @@
 			activePopup = document.querySelector(".ui-popup-active");
 			page = document.getElementsByClassName("ui-page-active")[0];
 			pageid = page ? page.id : "";
-
+			
+//			tau.back();
+			
 			if (pageid === "main" && !activePopup) {
 				try {
 					tizen.application.getCurrentApplication().exit();
 				} catch (ignore) {
+					console.log(ignore.message);
 				}
 			} else {
 				window.history.back();
@@ -35,10 +38,15 @@ $('#age-calculator').on('submit',function () {
 	
     if(from_date>=to_date){
 		 var ageDifMs = from_date - to_date;
-		 console.log(ageDifMs);
+//		 console.log(ageDifMs);
 		 var ageDate = new Date(ageDifMs); 
-		 console.log(ageDate);
-		 result_age.html(Math.abs(ageDate.getUTCFullYear() - 1970)); 
+//		 console.log(ageDate.getUTCFullYear());
+//		 console.log(ageDate.getUTCMonth());
+//		 console.log(ageDate.getUTCDay());
+		 var result=Math.abs(ageDate.getUTCFullYear() - 1970)+" years ";
+//		 result+=ageDate.getUTCMonth()+ " months ";
+//		 result+=ageDate.getUTCDate()+ " days";
+		 result_age.html(result); 
     }
     else{
 		 result_age.html("You are unborn"); 

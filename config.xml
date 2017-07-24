@@ -5,8 +5,8 @@
     <content src="index.html"/>
     <description>We help you to count time difference</description>
     <feature name="http://tizen.org/feature/screen.size.all"/>
-    <icon src="farifam.png"/>
-    <name>timecalculator</name>
+    <icon src="calculator-on-calendar-page.png"/>
+    <name>Time Calculator</name>
     <tizen:profile name="mobile"/>
-    <tizen:setting context-menu="disable"/>
+    <tizen:setting screen-orientation="portrait" context-menu="disable" background-support="disable" encryption="disable" install-location="auto" hwkey-event="enable"/>
 </widget>
